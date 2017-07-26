@@ -1,5 +1,6 @@
 import splinter
 import time
+start_time = time.time()
 ##開啟瀏覽器
 browser = splinter.Browser(driver_name='chrome')
 browser.driver.set_window_size(1680, 1050)
@@ -50,7 +51,7 @@ while True:
 	
 	##去程
 	day = browser.find_by_xpath('//*[@id="datepickers-container"]/div[1]/div[2]/table/tbody/tr['+str(w)+']/td['+str(w_count)+']')
-	print(str(w)+str(d)+str(w_count))
+	# print(str(w)+str(d)+str(w_count))
 	day.click()
 
 	##回程
@@ -63,7 +64,7 @@ while True:
 	ok.click()
 	
 	browser.click_link_by_id("lit_ok")	##開始搜尋
-	time.sleep(10)
+	time.sleep(5)
 	# Taipei_KIX = browser.find_by_xpath('//*[@id="tpl4_bound0-bound-table"]')
 
 	# for T_K in Taipei_KIX:
@@ -86,4 +87,5 @@ while True:
 	if m == 8 and d == 35:
 			break
 
-
+end_time = time.time()
+print("spend " + str((end_time-start_time)/60) + " min")
