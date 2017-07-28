@@ -68,6 +68,7 @@ if __name__ == '__main__':
 		thread1.start()
 		thread2.start()
 		thread3.start()
+		thread4.start()
 		end_time = time.time()
 		print("spend " + str((end_time-start_time)/60) + " min")
 	except:
